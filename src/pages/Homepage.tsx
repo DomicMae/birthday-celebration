@@ -1,11 +1,9 @@
-import { useEffect, useRef, useState } from "react";
-import BirthdayHeader from "../components/BirthdayHeader";
+import { useEffect, useState } from "react";
 import GiftGallery, { type GiftItem } from "../components/GiftGallery";
 import BirthdayCard from "../components/BirthdayCard";
 import GiftSection from "../components/GiftSection";
 import BirthdayHeroGlamour from "../components/BirthdayHeroGlamour";
 import MemoryGallery from "../components/MemoryGallery";
-import PolaroidCollage from "../components/PolaroidCollage";
 
 /* =====================
    Component
@@ -13,8 +11,6 @@ import PolaroidCollage from "../components/PolaroidCollage";
 export default function HomePage() {
   const [countdown, setCountdown] = useState<number>(2);
   const [showMainContent, setShowMainContent] = useState<boolean>(false);
-
-  const birthdayCardRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
