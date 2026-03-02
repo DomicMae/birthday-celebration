@@ -28,50 +28,38 @@ interface GiftCardProps {
 export default function GiftSection() {
   const gifts: GiftItem[] = [
     {
-      image: "keychain.svg",
-      product: "keychain",
-      title: "Unwrap the Moments",
-      description: "Hadiah pertama yang sangat spesial untukmu!",
-    },
-    {
-      image: "photo.svg",
-      product: "photo",
-      title: "Unwrap the Moments",
-      description: "Semoga ini membawa kebahagiaan untukmu!",
-    },
-    {
-      image: "flower.svg",
-      product: "flower",
-      title: "Unwrap the Moments",
-      description: "Selamat, ini adalah hadiah ketiga untukmu!",
+      image: "smartwatch.jpg",
+      product: "Smartwatch",
+      title: "For you....",
+      description: "Hadiah untukmu supaya bisa lebih produktif dan aktif",
     },
   ];
 
-  return (
-    <section className="w-full min-h-screen py-12 text-white">
-      <div className="container mx-auto px-6">
-        <motion.div
-          className="text-center mb-12"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-        >
-          <h2 className="text-4xl font-extrabold">The Surprise Collection</h2>
-          <p className="mt-2 text-lg text-gray-700">
-            Small Gifts, Big Feelings
-          </p>
-        </motion.div>
+  const singleGift = gifts[0];
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-          {gifts.map((gift, index) => (
-            <GiftCard
-              key={index}
-              image={gift.image}
-              product={gift.product}
-              title={gift.title}
-              description={gift.description}
-            />
-          ))}
+  return (
+    <section className="w-full min-h-screen py-12 flex items-center justify-center text-white">
+      <div className="container mx-auto px-6 flex justify-center">
+        <div className="w-full max-w-md">
+          <motion.div
+            className="text-center mb-10"
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
+            <h2 className="text-4xl font-extrabold text-white">
+              The Surprise Collection
+            </h2>
+            <p className="mt-2 text-lg text-gray-400 italic">
+              Small Gifts, Big Feelings
+            </p>
+          </motion.div>
+
+          <GiftCard
+            image={singleGift.image}
+            product={singleGift.product}
+            title={singleGift.title}
+            description={singleGift.description}
+          />
         </div>
       </div>
     </section>
